@@ -13,7 +13,7 @@ function Home()
     const handleSearch = (e) => {
         e.preventDefault()
         alert (searchQuery)
-        setSearchQuery(" - - - - -- ")
+        setSearchQuery(" - type a name here - ")
     }
     return <div className="home">
         <form onSubmit={handleSearch} className="search-form">
