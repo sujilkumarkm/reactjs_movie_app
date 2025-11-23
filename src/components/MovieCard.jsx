@@ -3,13 +3,13 @@ import { useMovieContext } from "../context/MovieContext"
 
 function MovieCard({movie})
 {
-    const {favorites, isFavorite, addToFavorites, removeFromFavorite} = useMovieContext()
+    const {favorites, isFavorite, addToFavorites, removeFromFavorites} = useMovieContext()
     const favorite = isFavorite(movie.id)
     function onFavoriteClick(e)
     {
         // alert("clicked");
         e.preventDefault()
-        if (favorite) removeFromFavorite(movie.id)
+        if (favorite) removeFromFavorites(movie.id)
             else addToFavorites(movie)
     }
     return <div className="movie-card">
@@ -17,7 +17,7 @@ function MovieCard({movie})
             <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} alt="{movie.title}"/>
             <div className="movie-overlay">
                 <button className={`favorite-btn ${favorite ? "active" : ""}`} onClick={onFavoriteClick}>
-                    🤍
+                    ♥
                 </button>
             </div>
         </div>

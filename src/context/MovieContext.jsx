@@ -23,7 +23,7 @@ const [favorites, setFavorites] = useState([])
         setFavorites(prev => [...prev, movie])
     }
 
-    const removeFromFavorites = (moviesId) => {
+    const removeFromFavorites = (movieId) => {
         setFavorites(prev => prev.filter(movie => movie.id !== movieId))
     }
 
